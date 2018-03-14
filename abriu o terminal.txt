@@ -29,3 +29,10 @@ git push origin master
 cd /var/www/html
 clone no github
 git clone >
+
+----------------------------
+salvar arquivos github > https://github.com/rubensdellamatta
+
+git add --all
+git commit -m " "
+git push origin master 
