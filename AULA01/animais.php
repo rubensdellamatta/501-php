@@ -1,29 +1,27 @@
 <?php 
 
-class Animais
+class Animal
 {
-	private $genero;
-	private $cor;
+	public $raca;
+	public $genero;
 
-	public function setCor($cor){
-		$this->cor = $cor;
+	public function comer(){
+
 	}
-	public function getCor(){
-		return $this->cor;
+	public function dormir(){
+
 	}
 }
 
-class Cachorro extends Animais
-{
-	
-}
-
-class Gato extends Animais
+class Cachorro extends Animal
 {
 
 }
+class Gato extends Animal
+{
 
-echo "<pre>";
+}
+
 $dog = new Cachorro();
-$cat = new Gato();
-$dog->set
+$dog->raca = "vira-lata";
+var_dump($dog);

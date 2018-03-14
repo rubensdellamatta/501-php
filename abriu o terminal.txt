@@ -1,0 +1,31 @@
+abriu o terminal
+
+cd /var/www/
+mkdir html
+cd html/
+mkdir 501
+cd 501
+subl .
+----------------------------
+sudo subl /etc/php/7.0/apache2/php.ini
+Na linha 462
+display_errors = On
+sudo service apache2 restart
+----------------------------
+cd /var/www/html/501/
+git init
+git add .
+git commit -m "aula01"
+----------------------------
+No github
+Criar repositório
+----------------------------
+git remote add origin "url"
+git push origin master
+
+
+
+----------------------------
+cd /var/www/html
+clone no github
+git clone >

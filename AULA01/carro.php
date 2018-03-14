@@ -1,39 +1,42 @@
 <?php 
-
-
+// Classe Carro
+// Atributos privados cor, marca, velocidade, marcha;
+// Construtor que define uma cor e uma marca para o carro;
+// Métodos publicos,verCor,verMarca,verVelocidade,verMarcha;
+// Método publico acelelar - aumenta a velocidade em 10
+// Método publico freiar - diminui a velocidade em 10
+// Método publico trocarMarcha - recebe uma marcha por parametro e altera;
 class Carro
 {
-	public $numConta;
-	private $saldo;
-	private $titular;
+	private $cor;
+	private $marca;
+	private $velocidade;
+	private $macha;
 
-	public function __construct($titular, $saldo = 0){
-		$this->titular = $titular;
-		$this->numConta = (string) rand(100,999) . "-" . rand(0,9);
-		$this->depositar($saldo);
+	public function __construct($cor,$marca){
+		$this->cor = $cor;
+		$this->marca = $marca;
 	}
-
-	public function verTitular(){
-		return "O Titular da conta é {$this->numConta} : " . $this->titular . "<br>";
+	public function acelelar(){
+		$this->velocidade += 10;
 	}
-	public function verSaldo(){
-		return "o Saldo Atual é: " . $this->saldo . "<br>";
+	public function freiar(){
+		$this->velocidade -= 10;
 	}
-	public function sacar($qtdSacar){
-		$this->saldo -= $qtdSacar;
+	public function trocarMarcha($marcha){
+		$this->marcha = $marcha;
 	}
-	public function depositar($qtdDeposito){
-		$this->saldo += $qtdDeposito;
+	public function verVelocidade(){
+		return "Velocidade Atual:" . $this->velocidade;
+	}
+	public function verMarcha(){
+		return "Marcha Atual:" . $this->marcha;
+	}
+	public function verCor(){
+		return "O Carro é da cor:" . $this->cor;
+	}
+	public function verMarca(){
+		return "O Carro é da marca:" . $this->marca;
 	}
 }
 
-$cor = new carro(VERMELHO);
-echo $conta->verTitular();
-$conta->depositar(1000);
-echo $conta->verSaldo();
-$conta->sacar(200);
-$conta->sacar(40);
-echo $conta->verSaldo();
-echo "<hr>";
-$conta1 = new Conta("João");
-echo $conta1->verTitular();
