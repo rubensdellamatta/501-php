@@ -7,6 +7,7 @@ class Carro
 	public $marca;
 	public $modelo;
 	public $velocidade;
+	
 	public function buzinar(){
 		echo "Estou buzinando <br>";
 	}
@@ -17,10 +18,10 @@ class Carro
 		$this->velocidade -= 10;
 	}
 }
-$uno = new Carro();
-$uno->cor = "Azul";
-$uno->marca = "Fiat";
-$uno->modelo = "Uno 1.0";
+$uno = new Carro(); //criando carro *objeto
+$uno->cor = "Azul"; //atribuindo a cor
+$uno->marca = "Fiat"; //atribuindo marca
+$uno->modelo = "Uno 1.0"; //atribuindo modelo
 $uno->buzinar();
 $uno->acelerar();
 $uno->acelerar();

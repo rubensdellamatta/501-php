@@ -1,4 +1,5 @@
 <?php 
+
 interface TelevisaoInterface
 {
 	public function aumentarVolume();
@@ -7,6 +8,7 @@ interface TelevisaoInterface
 	public function desligar();
 	public function trocarCanal($canal);
 }
+
 class TV implements TelevisaoInterface
 {
 	public $volume = 10;
@@ -29,5 +31,8 @@ class TV implements TelevisaoInterface
 		$this->canal = $canal;
 	}
 }
-
-
+echo "<pre>";
+$tv = new TV();
+print_r($tv);
+echo "<hr>";
+$tv->ligar();

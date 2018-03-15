@@ -12,12 +12,12 @@ class Conta
 		$this->gerarNumConta();
 	}
 
-	public function getSaldo()
+	public function getSaldo() //get 
 	{
 	    return $this->saldo;
 	}
 	
-	protected function setSaldo($saldo)
+	protected function setSaldo($saldo) //set 
 	{
 	    $this->saldo = $saldo;
 	}

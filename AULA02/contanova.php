@@ -14,7 +14,7 @@ abstract class Conta
 		$this->gerarNumConta();
 	}
 
-	abstract protected function gerarNumConta();
+	abstract protected function gerarNumConta();   //nao vire objeto so modelo
 	abstract protected function depositar(int $valor);
 
 	public final function getSaldo(){
@@ -56,7 +56,7 @@ class ContaCorrente extends Conta
 	}
 }
 
-final Class ContaSalario extends ContaCorrente
+final Class ContaSalario extends ContaCorrente //nao pode ter herdeiros
 {
 	public function depositar(int $valor){
 		$this->saldo += $valor;
