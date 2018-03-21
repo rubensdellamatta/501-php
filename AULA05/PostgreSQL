@@ -1,0 +1,158 @@
+********PostgreSQL
+Instalar o PostgreSQL
+
+sudo apt update
+sudo apt install postgresql
+
+********Logando a primeira vez
+
+sudo su
+su postgres
+psql
+
+Com o usuário postgres, criar o banco, usuário e trocar o dono do banco
+
+CREATE DATABASE aula;
+CREATE USER lucas PASSWORD '123';
+ALTER DATABASE aula OWNER TO lucas/
+
+Desconectou de tudo
+
+\q
+exit
+exit
+exit
+
+Logando no novo banco com o novo usuário
+
+psql -h localhost -U lucas aula
+
+********Criando as tabelas********
+
+https://github.com/lucasmarques4linux/500-PHP-26-02-2018/blob/master/projeto/script-postgres.sql
+MySQL
+
+********Logando como super usuário
+
+sudo su
+mysql
+
+********Criando bando de dados
+
+CREATE DATABASE aula;
+
+********Criando usuário e dando permissão de super usuário
+
+CREATE USER 'lucas'@'localhost' IDENTIFIED BY '@da4linux';
+GRANT ALL PRIVILEGES ON *.* TO 'lucas'@'localhost';
+
+Desconectando de tudo
+
+exit
+exit
+exit
+
+Logando no novo banco com novo usuário
+
+mysql -u lucas -p
+use aula;
+
+********Criando as tabelas********
+
+https://github.com/lucasmarques4linux/500-PHP-26-02-2018/blob/master/projeto/script-mysql.sql
+PHP
+Instalando driver PostgreSQL
+
+sudo apt install php7.0-pgsql
+
+Instalando driver Mysql
+
+sudo apt install php7.0-mysql
+
+Reiniciar o apache2
+
+sudo service apache2 restart
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+********************************************
+sudo apt update - Atualiza repositórios
+sudo apt install postgresql - Instala Postgres
+
+sudo su - Loga como root
+su postgres - Loga como postgres
+psql - Abre o postrgreSql
+
+CREATE DATABASE aula08; - criar banco de dados
+\l - listas banco de dados
+q - sair
+
+CREATE USER lucas PASSWORD '123'; - Criar usuario
+\du - listar usuários
+
+ALTER DATABASE aula08 OWNER TO lucas; - Alterando dono do banco de dados
+\l
+\q - sair do postgresql
+exit - sair do usuario postgres
+exit - sair do usuario root
+
+psql -h localhost -U lucas aula08 - Entrando no banco aula08 com o usuário lucas no host localhost
+
+CREATE TABLE usuarios(
+id SERIAL PRIMARY KEY,
+usuario VARCHAR(255) NOT NULL,
+senha VARCHAR(40) NOT NULL
+);
+
+\dt - listas as tabelas
+\d usuarios - informações da tabela
+
+CREATE TABLE posts(
+id SERIAL PRIMARY KEY,
+usuario_id INT REFERENCES usuarios(id),
+post VARCHAR(140) NOT NULL
+);
+
+ALTER TABLE posts ALTER COLUMN usuario_id SET NOT NULL;
+
+-------------------------------------------
+sudo apt update
+sudo apt install php7.0-pgsql
+sudo service apache2 restart
+
+
+
+
+
