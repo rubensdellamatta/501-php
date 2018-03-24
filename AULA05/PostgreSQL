@@ -77,6 +77,10 @@ sudo service apache2 restart
 
 
 
+********novo usuario na tabela
+> select * from tb_usuarios;
+
+
 
 
 

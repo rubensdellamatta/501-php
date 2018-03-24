@@ -1,4 +1,4 @@
-<?php
+<?php 
 require 'conexao.php';
 class Usuario
 {
@@ -39,5 +39,3 @@ class Usuario
 }
 $usuario = new Usuario('Lucas Marques','lucas@lucas.com.br','123');
 $usuario->salvar();
-
-

@@ -1,0 +1,17 @@
+-- POSTGRESQL
+
+CREATE TABLE tb_usuarios(
+	id SERIAL PRIMARY KEY,
+	nome VARCHAR(255) NOT NULL,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	senha VARCHAR(150) NOT NULL
+);
+
+CREATE TABLE tb_tarefas(
+	id SERIAL PRIMARY KEY,
+	idUsuario INT NOT NULL REFERENCES tb_usuarios(id),
+	descricao VARCHAR(255) NOT NULL,
+	dtInicio DATE,
+	dtFim DATE,
+	status VARCHAR(50) NOT NULL
+);
